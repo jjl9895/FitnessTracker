@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F17A8F752CB097CA009E87AB /* WorkoutFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17A8F742CB097CA009E87AB /* WorkoutFormView.swift */; };
 		F17A8F772CB09869009E87AB /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17A8F762CB09869009E87AB /* Workout.swift */; };
+		F17A8F792CB57810009E87AB /* WorkoutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17A8F782CB57810009E87AB /* WorkoutListView.swift */; };
 		F1A5999F2CAED4D9007C1D9A /* FitnessTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A5999E2CAED4D9007C1D9A /* FitnessTrackerApp.swift */; };
 		F1A599A12CAED4D9007C1D9A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A599A02CAED4D9007C1D9A /* ContentView.swift */; };
 		F1A599A32CAED4D9007C1D9A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A599A22CAED4D9007C1D9A /* Item.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		F17A8F742CB097CA009E87AB /* WorkoutFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutFormView.swift; sourceTree = "<group>"; };
 		F17A8F762CB09869009E87AB /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		F17A8F782CB57810009E87AB /* WorkoutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListView.swift; sourceTree = "<group>"; };
 		F1A5999B2CAED4D9007C1D9A /* FitnessTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A5999E2CAED4D9007C1D9A /* FitnessTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessTrackerApp.swift; sourceTree = "<group>"; };
 		F1A599A02CAED4D9007C1D9A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				F1A599A72CAED4DB007C1D9A /* Preview Content */,
 				F17A8F742CB097CA009E87AB /* WorkoutFormView.swift */,
 				F17A8F762CB09869009E87AB /* Workout.swift */,
+				F17A8F782CB57810009E87AB /* WorkoutListView.swift */,
 			);
 			path = FitnessTracker;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			files = (
 				F1A599A12CAED4D9007C1D9A /* ContentView.swift in Sources */,
 				F17A8F752CB097CA009E87AB /* WorkoutFormView.swift in Sources */,
+				F17A8F792CB57810009E87AB /* WorkoutListView.swift in Sources */,
 				F1A599A32CAED4D9007C1D9A /* Item.swift in Sources */,
 				F17A8F772CB09869009E87AB /* Workout.swift in Sources */,
 				F1A5999F2CAED4D9007C1D9A /* FitnessTrackerApp.swift in Sources */,

@@ -1,10 +1,3 @@
-//
-//  FitnessTrackerApp.swift
-//  FitnessTracker
-//
-//  Created by Jeffrey Lin on 10/3/24.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -12,7 +5,7 @@ import SwiftData
 struct FitnessTrackerApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Workout.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,8 +18,13 @@ struct FitnessTrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            WorkoutFormView()
+            WorkoutListView()
         }
         .modelContainer(sharedModelContainer)
     }
+}
+
+#Preview {
+    WorkoutListView()
+        .modelContainer(for: Workout.self, inMemory: true)
 }

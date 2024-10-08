@@ -3,61 +3,53 @@ import SwiftData
 
 struct WorkoutFormView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
+
     @State private var workoutName = ""
     @State private var sets = ""
     @State private var reps = ""
     @State private var weight = ""
 
     var body: some View {
-        VStack {
-            TextField("Workout Name", text: $workoutName)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-
-            TextField("Sets", text: $sets)
-                
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-
-            TextField("Reps", text: $reps)
-                
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-
-            TextField("Weight", text: $weight)
-                
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+        Form {
+            Section(header: Text("Workout Details")) {
+                TextField("Workout Name", text: $workoutName)
+                TextField("Sets", text: $sets)
+                TextField("Reps", text: $reps)
+                TextField("Weight", text: $weight)
+            }
 
             Button(action: {
                 addWorkout()
             }) {
                 Text("Save Workout")
                     .font(.headline)
-                    .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
             }
-            .padding()
+            .disabled(workoutName.isEmpty || sets.isEmpty || reps.isEmpty || weight.isEmpty)
         }
+        .navigationTitle("New Workout")
+        .navigationBarTitleDisplayMode(.inline)
     }
 
-    // Function to add workout
     func addWorkout() {
-        // Create a new Workout object
-        let newWorkout = Workout(name: workoutName, sets: Int(sets) ?? 0, reps: Int(reps) ?? 0, weight: Double(weight) ?? 0.0, date: Date())
-        
-        // Add it to the model context
+        let newWorkout = Workout(
+            name: workoutName,
+            sets: Int(sets) ?? 0,
+            reps: Int(reps) ?? 0,
+            weight: Double(weight) ?? 0.0,
+            date: Date()
+        )
+
         modelContext.insert(newWorkout)
-        
-        // No need to explicitly call save, SwiftData will handle persistence
+        dismiss()
     }
 }
+
 
 #Preview {
     WorkoutFormView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Workout.self, inMemory: true)
 }
+
 

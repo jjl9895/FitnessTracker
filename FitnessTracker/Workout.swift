@@ -9,8 +9,8 @@ import Foundation
 import SwiftData
 
 @Model
-class Workout {
-    var id: UUID
+class Workout: Identifiable {
+    // Remove the manual 'id' property if using '@Model'
     var name: String
     var sets: Int
     var reps: Int
@@ -18,7 +18,6 @@ class Workout {
     var date: Date
 
     init(name: String, sets: Int, reps: Int, weight: Double, date: Date) {
-        self.id = UUID()
         self.name = name
         self.sets = sets
         self.reps = reps
